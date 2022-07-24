@@ -1,11 +1,14 @@
 import React from "react";
-import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
+import Card from "./UI/Card/Card";
+import classes from "../src/App.module.scss";
 
 function App() {
   return (
-    <>
-      <RegistrationForm />
-    </>
+    <div className={classes.background}>
+      <div>
+        <Card />
+      </div>
+    </div>
   );
 }
 
