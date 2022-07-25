@@ -1,18 +1,13 @@
-import React from "react";
-import Card from "./UI/Card/Card";
+import React, { FC } from "react";
 import classes from "../src/App.module.scss";
-import InputBlock from "./UI/InputBlock/InputBlock";
+import AuthPage from "./pages/AuthPage/AuthPage";
 
-function App() {
+const App: FC = () => {
   return (
     <div className={classes.background}>
-      <div>
-        <Card>
-          <InputBlock />
-        </Card>
-      </div>
+      <AuthPage />
     </div>
   );
-}
+};
 
 export default App;
