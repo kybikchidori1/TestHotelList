@@ -1,12 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
 import classes from "../Button/Button.module.scss";
 
-const Button = (props: any) => {
-  return (
-    <div>
-      <button className={classes.button}>Войти</button>
-    </div>
-  );
+interface ButtonProps {
+  children?: any;
+}
+
+const Button: FC<ButtonProps> = (props: any) => {
+  return <button className={classes.button}>{props.children}</button>;
 };
 
 export default Button;
