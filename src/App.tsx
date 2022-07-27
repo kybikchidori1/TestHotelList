@@ -1,14 +1,16 @@
-import React, { FC } from "react";
-import classes from "../src/App.module.scss";
+import React, { FC, Fragment } from "react";
+import { Route, Routes } from "react-router-dom";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import HotelsPage from "./pages/HotelsPage/HotelsPage";
 
 const App: FC = () => {
   return (
-    <div className={classes.background}>
-      {/* <AuthPage /> */}
-      <HotelsPage />
-    </div>
+    <Fragment>
+      <Routes>
+        <Route path="/" element={<AuthPage />} />
+        <Route path="/hotels" element={<HotelsPage />} />
+      </Routes>
+    </Fragment>
   );
 };
 
