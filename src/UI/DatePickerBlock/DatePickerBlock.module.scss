@@ -1,0 +1,23 @@
+.input__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #424242;
+}
+
+.input__form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 15px;
+
+  width: 345px;
+  height: 50px;
+
+  background: #ffffff;
+  border: 1px solid #c9cacc;
+  border-radius: 4px;
+}
