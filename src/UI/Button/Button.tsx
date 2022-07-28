@@ -3,6 +3,7 @@ import classes from "../Button/Button.module.scss";
 
 interface ButtonProps {
   children?: any;
+  onSubmit?: any;
 }
 
 const Button: FC<ButtonProps> = (props: any) => {
