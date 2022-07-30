@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import HotelCard from "../../components/HotelCard/HotelCard";
 import IconLogout from "../../etc/img/icon/Logout";
 import Button from "../../UI/Button/Button";
 import Card from "../../UI/Card/Card";
@@ -7,10 +8,20 @@ import InputDate from "../../UI/InputDate/InputDate";
 import InputText from "../../UI/InputText/InputText";
 import classes from "../HotelsPage/HotelsPage.module.scss";
 
+interface HotelItemResponse {
+  label: string;
+  locationName: string;
+  id: string;
+  location: any;
+  _score: number;
+  fullName: string;
+  locationId: number;
+}
+
 const HotelsPage: FC = (props: any) => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<HotelItemResponse[]>([]);
 
   useEffect(() => {
     fetch(
@@ -20,8 +31,8 @@ const HotelsPage: FC = (props: any) => {
       .then(
         (result) => {
           setIsLoaded(true);
-          setItems(result);
-          console.log(result);
+          setItems(result.results.hotels);
+          console.log(result.results.hotels);
         },
         (error) => {
           setIsLoaded(true);
@@ -48,6 +59,22 @@ const HotelsPage: FC = (props: any) => {
         <InputDate title={"Дата заселения"} />
         <InputText title={"Количество дней"} />
         <Button>Найти</Button>
+      </Card>
+
+      <Card>
+        <div>
+          {items.map((item: HotelItemResponse) => {
+            return (
+              <HotelCard
+                key={item.id}
+                title={item.label}
+                price={123}
+                amountDay={1}
+                startDate={new Date()}
+              />
+            );
+          })}
+        </div>
       </Card>
     </div>
   );
