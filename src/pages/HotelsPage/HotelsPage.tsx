@@ -13,19 +13,23 @@ const HotelsPage: FC = (props: any) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://engine.hotellook.com/api/v2/lookup.json")
+    fetch(
+      "http://engine.hotellook.com/api/v2/lookup.json?query=moscow&lang=ru&lookFor=both&limit=100"
+    )
       .then((res) => res.json())
       .then(
         (result) => {
           setIsLoaded(true);
           setItems(result);
+          console.log(result);
         },
         (error) => {
           setIsLoaded(true);
           setError(error);
         }
       );
-  }, []);
+  }, []); // [] - единожды при первом заходе на странице отработает код из useEffect
+  // [var1,var2,var3] - при изменении любой из переменных отработает код из useEffect
 
   return (
     <div className={classes.background}>

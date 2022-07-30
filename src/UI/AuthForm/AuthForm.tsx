@@ -2,15 +2,14 @@ import React, { FC } from "react";
 import Button from "../Button/Button";
 import InputText from "../InputText/InputText";
 import classes from "./AuthForm.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const AuthForm: FC = (props: any) => {
-  const submitHundler = (e: any) => {
-    e.preventDefault();
-    console.log(e);
-  };
+  let navigate = useNavigate();
 
-  const submitLink = (e: any) => {
-    e.preventDefault();
+  const submitHundler = (e: any) => {
+    e.preventDefault(); // блокирует onSubmit стандартное поведение
+    navigate("/hotels");
   };
 
   return (
@@ -18,7 +17,7 @@ const AuthForm: FC = (props: any) => {
       <h1 className={classes.title}>Simple Hotel Check</h1>
       <InputText title={"Логин"} />
       <InputText title={"Пароль"} />
-      <Button onSubmit={submitLink}>Войти</Button>
+      <Button>Войти</Button>
     </form>
   );
 };
