@@ -62,13 +62,13 @@ const HotelsPage: FC = (props: any) => {
       </Card>
 
       <Card>
-        <div>
+        <div className={classes.hotels}>
           {items.map((item: HotelItemResponse) => {
             return (
               <HotelCard
                 key={item.id}
                 title={item.label}
-                price={123}
+                price={9999}
                 amountDay={1}
                 startDate={new Date()}
               />

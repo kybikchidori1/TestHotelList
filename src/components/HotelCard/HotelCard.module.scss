@@ -1,0 +1,78 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(65, 82, 46, 0.05);
+}
+.block {
+  display: flex;
+}
+
+.hotel__img {
+  background: rgba(65, 82, 46, 0.05);
+  border-radius: 50%;
+  padding: 17px;
+  margin-bottom: 16px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 24px;
+}
+.title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 22px;
+  color: #424242;
+
+  letter-spacing: -0.408px;
+}
+.date {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+
+  letter-spacing: -0.408px;
+
+  color: #878787;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.favorite__img {
+  margin-bottom: 22px;
+}
+
+.count {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 22px;
+
+  letter-spacing: -0.408px;
+
+  color: #878787;
+  margin-right: 8px;
+}
+
+.price {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+
+  text-align: right;
+  letter-spacing: -0.408px;
+
+  color: #424242;
+}

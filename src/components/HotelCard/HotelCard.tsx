@@ -36,21 +36,27 @@ const HotelCard: FC<HotelCardProps> = (props) => {
 
   const startDate = `${day} ${stringMonth} ${year}`;
 
-  console.log(props.startDate.getDate());
   return (
-    <div className={classes.block}>
-      <img src={HouseIcon} alt="hotel-img" className={classes.hotel__img} />
-      <div className={classes.main}>
-        <h2 className={classes.title}>{props.title}</h2>
-        <p className={classes.date}>
-          {startDate} - {props.amountDay} день
-        </p>
+    <div className={classes.card}>
+      <div className={classes.block}>
+        <img src={HouseIcon} alt="hotel-img" className={classes.hotel__img} />
+        <div className={classes.main}>
+          <h2 className={classes.title}>{props.title}</h2>
+          <p className={classes.date}>
+            {startDate} - {props.amountDay} день
+          </p>
+        </div>
       </div>
+
       <div className={classes.info}>
-        <img src={FavoriteIcon} alt="favorite-icon" />
-        <p className={classes.price}>
-          <span></span>
-          <span></span>
+        <img
+          src={FavoriteIcon}
+          alt="favorite-icon"
+          className={classes.favorite__img}
+        />
+        <p className={classes.price__block}>
+          <span className={classes.count}>Price:</span>
+          <span className={classes.price}>{props.price} ₽</span>
         </p>
       </div>
     </div>
